@@ -14,16 +14,431 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      applications: {
+        Row: {
+          id: string
+          notes: string | null
+          platform_name: string
+          status: string
+          submitted_at: string
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          notes?: string | null
+          platform_name: string
+          status?: string
+          submitted_at?: string
+          user_id: string
+        }
+        Update: {
+          id?: string
+          notes?: string | null
+          platform_name?: string
+          status?: string
+          submitted_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      benefits: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          documents_required: string[]
+          eligibility: string
+          how_to_apply: string
+          id: string
+          is_demo: boolean
+          name: string
+          provider: string | null
+          sort_order: number
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description: string
+          documents_required?: string[]
+          eligibility: string
+          how_to_apply: string
+          id?: string
+          is_demo?: boolean
+          name: string
+          provider?: string | null
+          sort_order?: number
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          documents_required?: string[]
+          eligibility?: string
+          how_to_apply?: string
+          id?: string
+          is_demo?: boolean
+          name?: string
+          provider?: string | null
+          sort_order?: number
+        }
+        Relationships: []
+      }
+      documents: {
+        Row: {
+          created_at: string
+          doc_type: string
+          expiry_date: string | null
+          file_path: string | null
+          id: string
+          name: string
+          notes: string | null
+          status: string
+          updated_at: string
+          uploaded_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          doc_type: string
+          expiry_date?: string | null
+          file_path?: string | null
+          id?: string
+          name: string
+          notes?: string | null
+          status?: string
+          updated_at?: string
+          uploaded_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          doc_type?: string
+          expiry_date?: string | null
+          file_path?: string | null
+          id?: string
+          name?: string
+          notes?: string | null
+          status?: string
+          updated_at?: string
+          uploaded_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      earnings: {
+        Row: {
+          created_at: string
+          entry_date: string
+          expenses: number
+          gross: number
+          id: string
+          incentives: number
+          net: number | null
+          platform: string
+          tips: number
+          trips: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          entry_date?: string
+          expenses?: number
+          gross?: number
+          id?: string
+          incentives?: number
+          net?: number | null
+          platform: string
+          tips?: number
+          trips?: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          entry_date?: string
+          expenses?: number
+          gross?: number
+          id?: string
+          incentives?: number
+          net?: number | null
+          platform?: string
+          tips?: number
+          trips?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      gig_platforms: {
+        Row: {
+          application_process: string | null
+          category: string
+          cities: string[]
+          created_at: string
+          documents_required: string[]
+          id: string
+          name: string
+          requirements: string[]
+          sort_order: number
+          vehicle_types: string[]
+          website: string | null
+          work_type: string
+        }
+        Insert: {
+          application_process?: string | null
+          category: string
+          cities?: string[]
+          created_at?: string
+          documents_required?: string[]
+          id?: string
+          name: string
+          requirements?: string[]
+          sort_order?: number
+          vehicle_types?: string[]
+          website?: string | null
+          work_type: string
+        }
+        Update: {
+          application_process?: string | null
+          category?: string
+          cities?: string[]
+          created_at?: string
+          documents_required?: string[]
+          id?: string
+          name?: string
+          requirements?: string[]
+          sort_order?: number
+          vehicle_types?: string[]
+          website?: string | null
+          work_type?: string
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          body: string | null
+          created_at: string
+          id: string
+          is_read: boolean
+          kind: string
+          title: string
+          user_id: string
+        }
+        Insert: {
+          body?: string | null
+          created_at?: string
+          id?: string
+          is_read?: boolean
+          kind?: string
+          title: string
+          user_id: string
+        }
+        Update: {
+          body?: string | null
+          created_at?: string
+          id?: string
+          is_read?: boolean
+          kind?: string
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avg_rating: number | null
+          city: string | null
+          created_at: string
+          email: string | null
+          experience_months: number | null
+          full_name: string
+          id: string
+          is_demo: boolean
+          notify_benefits: boolean
+          notify_documents: boolean
+          notify_earnings: boolean
+          phone: string | null
+          preferred_language: string | null
+          primary_category: string | null
+          state: string | null
+          total_trips: number | null
+          updated_at: string
+          vehicle_type: string | null
+        }
+        Insert: {
+          avg_rating?: number | null
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          experience_months?: number | null
+          full_name?: string
+          id: string
+          is_demo?: boolean
+          notify_benefits?: boolean
+          notify_documents?: boolean
+          notify_earnings?: boolean
+          phone?: string | null
+          preferred_language?: string | null
+          primary_category?: string | null
+          state?: string | null
+          total_trips?: number | null
+          updated_at?: string
+          vehicle_type?: string | null
+        }
+        Update: {
+          avg_rating?: number | null
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          experience_months?: number | null
+          full_name?: string
+          id?: string
+          is_demo?: boolean
+          notify_benefits?: boolean
+          notify_documents?: boolean
+          notify_earnings?: boolean
+          phone?: string | null
+          preferred_language?: string | null
+          primary_category?: string | null
+          state?: string | null
+          total_trips?: number | null
+          updated_at?: string
+          vehicle_type?: string | null
+        }
+        Relationships: []
+      }
+      subscriptions: {
+        Row: {
+          created_at: string
+          id: string
+          plan: string
+          renews_at: string | null
+          started_at: string
+          status: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          plan?: string
+          renews_at?: string | null
+          started_at?: string
+          status?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          plan?: string
+          renews_at?: string | null
+          started_at?: string
+          status?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      worker_benefits: {
+        Row: {
+          applied_at: string | null
+          benefit_id: string
+          created_at: string
+          id: string
+          status: string
+          user_id: string
+        }
+        Insert: {
+          applied_at?: string | null
+          benefit_id: string
+          created_at?: string
+          id?: string
+          status?: string
+          user_id: string
+        }
+        Update: {
+          applied_at?: string | null
+          benefit_id?: string
+          created_at?: string
+          id?: string
+          status?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "worker_benefits_benefit_id_fkey"
+            columns: ["benefit_id"]
+            isOneToOne: false
+            referencedRelation: "benefits"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      worker_platforms: {
+        Row: {
+          created_at: string
+          id: string
+          is_active: boolean
+          joined_on: string | null
+          platform_name: string
+          rating: number | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          joined_on?: string | null
+          platform_name: string
+          rating?: number | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          joined_on?: string | null
+          platform_name?: string
+          rating?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "worker"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +565,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "worker"],
+    },
   },
 } as const
